@@ -15,13 +15,13 @@ terraform {
 # ------------------------------------------------------------------------------------------------------
 resource "btp_subaccount_entitlement" "hana_cloud_tools" {
   subaccount_id = var.subaccount_id
-  service_name  = "hana-cloud-tools"
+  service_name  = var.hana_appName
   plan_name     = "tools"
 }
 
 resource "btp_subaccount_subscription" "hana_cloud_tools" {
   subaccount_id = var.subaccount_id
-  app_name      = "hana-cloud-tools"
+  app_name      = var.hana_appName
   plan_name     = "tools"
   depends_on    = [btp_subaccount_entitlement.hana_cloud_tools]
 }

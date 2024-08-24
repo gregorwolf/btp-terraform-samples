@@ -31,6 +31,12 @@ variable "ai_core_plan_name" {
   }
 }
 
+variable "hana_appName" {
+  type        = string
+  description = "HANA Cloud appName"
+  default     = "hana-cloud-tools"
+}
+
 variable "hana_system_password" {
   type        = string
   description = "The password of the database 'superuser' DBADMIN."
