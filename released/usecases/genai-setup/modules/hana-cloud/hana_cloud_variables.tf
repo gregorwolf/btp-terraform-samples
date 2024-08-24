@@ -17,7 +17,7 @@ variable "hana_service_name" {
 }
 
 variable "hana_memory" {
-  type        = Number
+  type        = number
   description = "HANA Cloud Memory"
   default     = 32
 }
