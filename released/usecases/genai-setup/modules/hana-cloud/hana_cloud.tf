@@ -62,20 +62,7 @@ resource "btp_subaccount_service_instance" "hana_cloud" {
       "data" : {
         "memory" : var.hana_memory,
         "edition" : "cloud",
-        "systempassword" : "${var.hana_system_password}",
-        "additionalWorkers" : 0,
-        "disasterRecoveryMode" : "no_disaster_recovery",
-        "enabledservices" : {
-          "docstore" : false,
-          "dpserver" : true,
-          "scriptserver" : false
-        },
-        "requestedOperation" : {},
-        "serviceStopped" : false,
-        "slaLevel" : "standard",
-        "storage" : 120,
-        "vcpu" : 2,
-        "whitelistIPs" : ["0.0.0.0/0"]
+        "systempassword" : "${var.hana_system_password}"
       }
   })
 
