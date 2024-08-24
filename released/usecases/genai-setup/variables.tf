@@ -31,7 +31,7 @@ variable "ai_core_plan_name" {
   }
 }
 
-variable "hana_appName" {
+variable "hana_appname" {
   type        = string
   description = "HANA Cloud appName"
   default     = "hana-cloud-tools"

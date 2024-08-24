@@ -15,7 +15,7 @@ terraform {
 # ------------------------------------------------------------------------------------------------------
 resource "btp_subaccount_entitlement" "hana_cloud_tools" {
   subaccount_id = var.subaccount_id
-  service_name  = var.hana_appName
+  service_name  = var.hana_appname
   plan_name     = "tools"
 }
 
