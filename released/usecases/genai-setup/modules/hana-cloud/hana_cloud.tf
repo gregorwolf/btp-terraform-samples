@@ -21,7 +21,7 @@ resource "btp_subaccount_entitlement" "hana_cloud_tools" {
 
 resource "btp_subaccount_subscription" "hana_cloud_tools" {
   subaccount_id = var.subaccount_id
-  app_name      = var.hana_appName
+  app_name      = var.hana_appname
   plan_name     = "tools"
   depends_on    = [btp_subaccount_entitlement.hana_cloud_tools]
 }
