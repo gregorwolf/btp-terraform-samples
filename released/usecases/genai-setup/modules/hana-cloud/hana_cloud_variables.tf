@@ -4,6 +4,11 @@ variable "subaccount_id" {
   description = "The subaccount id."
 }
 
+variable "hana_appname" {
+  type        = string
+  description = "HANA Cloud appName"
+  default     = "hana-cloud-tools"
+}
 
 variable "hana_system_password" {
   type        = string
