@@ -40,14 +40,14 @@ resource "btp_subaccount_role_collection_assignment" "hana_cloud_admin" {
 # ------------------------------------------------------------------------------------------------------
 resource "btp_subaccount_entitlement" "hana_cloud" {
   subaccount_id = var.subaccount_id
-  service_name  = "hana-cloud"
+  service_name  = var.hana_service_name
   plan_name     = "hana"
 }
 
 # Get plan for SAP HANA Cloud
 data "btp_subaccount_service_plan" "hana_cloud" {
   subaccount_id = var.subaccount_id
-  offering_name = "hana-cloud"
+  offering_name = var.hana_service_name
   name          = "hana"
   depends_on    = [btp_subaccount_entitlement.hana_cloud]
 }
@@ -60,7 +60,7 @@ resource "btp_subaccount_service_instance" "hana_cloud" {
   parameters = jsonencode(
     {
       "data" : {
-        "memory" : 32,
+        "memory" : var.hana_memory,
         "edition" : "cloud",
         "systempassword" : "${var.hana_system_password}",
         "additionalWorkers" : 0,

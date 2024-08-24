@@ -10,6 +10,18 @@ variable "hana_appname" {
   default     = "hana-cloud-tools"
 }
 
+variable "hana_service_name" {
+  type        = string
+  description = "HANA Cloud service_name"
+  default     = "hana-cloud"
+}
+
+variable "hana_memory" {
+  type        = Number
+  description = "HANA Cloud Memory"
+  default     = 32
+}
+
 variable "hana_system_password" {
   type        = string
   description = "The password of the database 'superuser' DBADMIN."
